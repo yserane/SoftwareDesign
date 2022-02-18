@@ -29,7 +29,7 @@ export class NewItemComponent implements OnInit {
     console.log(this.itemForm.value);
     this.itemForm.value;
     this.itemObj = new Item();
-    this.itemObj.userId = this.itemForm.get("randomInt").value;
+    this.itemObj.randomInt = this.itemForm.get("randomInt").value;
     this.itemService.postItem(this.itemObj).subscribe(
       (data) => console.log(data)
     );

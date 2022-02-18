@@ -1,8 +1,8 @@
 export class Item{
-    userId: number;
+    randomInt: number;
 
 Item (randomInt) {
-    this.userId = randomInt;
+    this.randomInt = randomInt;
 }
 
 }
