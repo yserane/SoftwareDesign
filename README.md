@@ -1,6 +1,6 @@
 # SoftwareDesign
 # How to run the UI - Angular +10 , npm +6
-# Get the source code from Git: http://softwaredesign/UI/regood/
+# Get the source code from Git: https://github.com/yserane/SoftwareDesign/tree/main/UI/regood
 
 # Download node and npm : https://nodejs.org/en/download/
 
