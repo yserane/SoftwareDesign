@@ -21,5 +21,9 @@ export class ItemService {
     },});
 
   }
+
+  getItem():Observable<any>{
+    return this.httpClient.get(this.endpoint+'/item/1');
+  }
   
 }

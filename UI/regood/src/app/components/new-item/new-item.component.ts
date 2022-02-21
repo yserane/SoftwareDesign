@@ -17,6 +17,7 @@ export class NewItemComponent implements OnInit {
   ngOnInit(): void {
     // this.initFormGroup();
     this.initItem();
+    // this.itemService.getItem().subscribe((data)=> console.log(data));
   }
   initFormGroup(){
     this.itemForm = new FormGroup({
