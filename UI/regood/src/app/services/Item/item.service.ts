@@ -8,7 +8,7 @@ import { Item } from 'src/app/model/item-model';
   providedIn: 'root'
 })
 export class ItemService {
-  endpoint = 'https://vincentprivatenas.mynetgear.com:7070/reGood/rest';
+  endpoint = 'http://vincentprivatenas.mynetgear.com:7070/reGood/rest';
   constructor(private httpClient: HttpClient) { }
 
   postItem(itemObj: Item): Observable<any> {
