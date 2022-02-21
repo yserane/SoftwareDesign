@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NewItemComponent } from './components/new-item/new-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ItemService } from './Services/Item/item.service';
+import { ItemService } from './services/Item/item.service';
 import {HttpClientModule } from  "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 

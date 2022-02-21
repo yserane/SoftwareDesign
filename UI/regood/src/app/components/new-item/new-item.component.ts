@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Item } from 'src/app/model/item-model';
 import { ItemService } from '../../services/Item/item.service';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-new-item',
@@ -11,8 +12,10 @@ import { ItemService } from '../../services/Item/item.service';
 export class NewItemComponent implements OnInit {
   itemForm: FormGroup;
   itemObj: Item;
+  response: string;
+  @ViewChild("content") content: HTMLElement;
 
-  constructor(private itemService: ItemService) { }
+  constructor(private itemService: ItemService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     // this.initFormGroup();
@@ -42,8 +45,10 @@ export class NewItemComponent implements OnInit {
     // this.itemObj.randomInt = this.itemForm.get("randomInt").value;
 
     this.itemService.postItem(this.itemObj).subscribe(
-      (data) => console.log(data)
+      (data) => this.response = "it worked!\n "+ data,
+      (error)=> this.response = error.message
     );
-    
+    this.modalService.open(this.content, {ariaLabelledBy: 'modal-basic-title'})
   }
 }
+

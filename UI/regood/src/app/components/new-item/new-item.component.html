@@ -10,6 +10,15 @@
 </ul>
 <button class="btn btn-primary" (click)="postItem()" type="submit">Fire 🔥</button>
 
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Response</h4>
+        <line></line>
+    </div>
+    <div class="modal-body">
+        <p>{{response}}</p>
+    </div>
+</ng-template>
 <!-- <form [formGroup]="itemForm" (ngSubmit)="postItem()">
     <div class="form-group"> -->
 <!-- <label for="randomInt">Νumber</label> -->
