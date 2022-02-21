@@ -46,7 +46,7 @@ export class NewItemComponent implements OnInit {
 
     this.itemService.postItem(this.itemObj).subscribe(
       (data) => this.response = "it worked!\n "+ data,
-      (error)=> this.response = error.message
+      (error)=> this.response = "Something went wrong! "+error.name
     );
     this.modalService.open(this.content, {ariaLabelledBy: 'modal-basic-title'})
   }
