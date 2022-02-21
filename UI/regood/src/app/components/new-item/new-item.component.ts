@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Item } from 'src/app/model/item-model';
-import { ItemService } from 'src/app/Services/Item/item.service';
+import { ItemService } from '../../Services/Item/item.service';
 
 @Component({
   selector: 'app-new-item',
