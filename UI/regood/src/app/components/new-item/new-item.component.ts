@@ -15,7 +15,8 @@ export class NewItemComponent implements OnInit {
   constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
-    this.initFormGroup();
+    // this.initFormGroup();
+    this.initItem();
   }
   initFormGroup(){
     this.itemForm = new FormGroup({
@@ -24,12 +25,21 @@ export class NewItemComponent implements OnInit {
     
     });
   }
+  initItem(){
+    this.itemObj = new Item();
+    this.itemObj.description = "1st Sprint To Do";
+    this.itemObj.name = "Demo Item";
+    this.itemObj.category = "Document";
+    this.itemObj.condition = "Good";
+    this.itemObj.location = "U.S."
+  }
   
   postItem(){
-    console.log(this.itemForm.value);
-    this.itemForm.value;
-    this.itemObj = new Item();
-    this.itemObj.randomInt = this.itemForm.get("randomInt").value;
+    // console.log(this.itemForm.value);
+    // this.itemForm.value;
+
+    // this.itemObj.randomInt = this.itemForm.get("randomInt").value;
+
     this.itemService.postItem(this.itemObj).subscribe(
       (data) => console.log(data)
     );

@@ -1,8 +1,11 @@
-export class Item{
-    randomInt: number;
+export class Item {
+    name: string;
+    description: string;
+    category: string;
+    location: string;
+    condition: string;
 
-Item (randomInt) {
-    this.randomInt = randomInt;
+
+Item () {
 }
-
 }

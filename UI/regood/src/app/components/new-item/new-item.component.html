@@ -1,8 +1,22 @@
-<form [formGroup]="itemForm" (ngSubmit)="postItem()">
-    <div class="form-group">
-        <!-- <label for="randomInt">Νumber</label> -->
-        <input type=number id="randomInt" aria-describedby="number" class="form-control" name="randomInt"
+<H2>Sending a POST Request to create new item with the following information:</H2>
+
+<ul class="list-group list-group-flush">
+    <li class="list-group-item"> Name: {{itemObj.name}}</li>
+    <li class="list-group-item"> Description: {{itemObj.description}}</li>
+    <li class="list-group-item"> Condition: {{itemObj.condition}}</li>
+    <li class="list-group-item"> Category: {{itemObj.category}}</li>
+    <li class="list-group-item"> Location: {{itemObj.location}}</li>
+
+</ul>
+<button class="btn btn-primary" (click)="postItem()" type="submit">Fire 🔥</button>
+
+<!-- <form [formGroup]="itemForm" (ngSubmit)="postItem()">
+    <div class="form-group"> -->
+<!-- <label for="randomInt">Νumber</label> -->
+<!-- <input type=number id="randomInt" aria-describedby="number" class="form-control" name="randomInt"
             placeholder="Enter any number" formControlName="randomInt">
     </div>
-    <button class="btn btn-primary" [disabled]="!itemForm.valid" type="submit">Fire 🔥</button>
-</form>
+    <button class="btn btn-primary" type="submit">Fire 🔥</button>
+</form> -->
+
+<!-- [disabled]="!itemForm.valid" -->

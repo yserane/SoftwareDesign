@@ -8,15 +8,18 @@ import { Item } from 'src/app/model/item-model';
   providedIn: 'root'
 })
 export class ItemService {
-  endpoint = 'http://{localhost}:3000/api';
+  endpoint = 'http://vincentprivatenas.mynetgear.com:7070/reGood/rest';
   constructor(private httpClient: HttpClient) { }
 
   postItem(itemObj: Item): Observable<any> {
     return this.httpClient.post(this.endpoint+'/item', itemObj,
        { headers: {
         'Content-type': 'application/json; charset=UTF-8',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Credentials':'true',
+        'Accept':'application/json',
     },});
 
   }
-
+  
 }
