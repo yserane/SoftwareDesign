@@ -1,0 +1,10 @@
+.btn-condition {
+  border: 1px #00000045 solid;
+  border-radius: 0px;
+  margin: 6px;
+}
+
+.btn-condition:focus {
+  background-color: #007bff;
+  color: white;
+}

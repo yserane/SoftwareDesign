@@ -11,17 +11,23 @@ export class ItemService {
   endpoint = 'http://vincentprivatenas.mynetgear.com:7070/reGood/rest';
   constructor(private httpClient: HttpClient) { }
 
-  postItem(itemObj: Item): Observable<any> {
-    return this.httpClient.post(this.endpoint+'/item', itemObj,
+  uploadImage(image: FormData): Observable<any> {
+    return this.httpClient.post("", image, 
+    { headers: {'Content-type': 'multipart/form-data;'}});
+  }
+  postItem(itemObj: any): Observable<any> {
+    //
+   return this.httpClient.post(this.endpoint+'/item', itemObj,
        { headers: {
         'Content-type': 'application/json; charset=UTF-8',
         'Access-Control-Allow-Origin':'*',
         'Accept':'application/json',
+        'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
     },});
 
   }
 
-  getItem():Observable<any>{
+  getItemById():Observable<any>{
     return this.httpClient.get(this.endpoint+'/item/1');
   }
   

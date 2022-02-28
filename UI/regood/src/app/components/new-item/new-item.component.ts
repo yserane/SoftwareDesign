@@ -13,42 +13,60 @@ export class NewItemComponent implements OnInit {
   itemForm: FormGroup;
   itemObj: Item;
   response: string;
+  category: string;
+  condition: string;
+  selectedFile: File
+
   @ViewChild("content") content: HTMLElement;
 
   constructor(private itemService: ItemService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    // this.initFormGroup();
-    this.initItem();
-    // this.itemService.getItem().subscribe((data)=> console.log(data));
+    this.initFormGroup();
+    
   }
   initFormGroup(){
     this.itemForm = new FormGroup({
-
-      randomInt: new FormControl(null, [Validators.required]),
-    
+      name: new FormControl(null, [Validators.required]),
+      description: new FormControl(),
+      city: new FormControl(),
+      state: new FormControl(),
+      zipCode: new FormControl()
     });
   }
   initItem(){
     this.itemObj = new Item();
-    this.itemObj.description = "1st Sprint To Do";
-    this.itemObj.name = "Demo Item";
-    this.itemObj.category = "Document";
-    this.itemObj.condition = "Good";
-    this.itemObj.location = "U.S."
+    this.itemObj.name = this.itemForm.get('name').value;
+    this.itemObj.description =this.itemForm.get('description').value;
+    this.itemObj.category =  this.category;
+    this.itemObj.condition = this.condition
+    this.itemObj.location = {"city":this.itemForm.get('city').value, "state":this.itemForm.get('state').value, "zipCode":this.itemForm.get('zipCode').value}
   }
   
-  postItem(){
-    // console.log(this.itemForm.value);
-    // this.itemForm.value;
-
-    // this.itemObj.randomInt = this.itemForm.get("randomInt").value;
-
+  onFileChanged(event) {
+    this.selectedFile = event.target.files[0]
+  }
+  postItem() {
+    const uploadData = new FormData();
+    uploadData.append('image', this.selectedFile, this.selectedFile.name);
+    this.initItem();
+    this.itemService.uploadImage(uploadData).subscribe(
+      (data) => this.response = "it worked! ID =\n "+ data.item_id,
+      (error)=> this.response = "Something went wrong! "+error.name
+      );
     this.itemService.postItem(this.itemObj).subscribe(
-      (data) => this.response = "it worked!\n "+ data,
+      (data) => this.response = "it worked! ID =\n "+ data.item_id,
       (error)=> this.response = "Something went wrong! "+error.name
     );
     this.modalService.open(this.content, {ariaLabelledBy: 'modal-basic-title'})
+  }
+
+  setCondition(condition){
+    this.condition = condition;
+  }
+  setCategory(e){
+    this.category = e.target.value;
+
   }
 }
 

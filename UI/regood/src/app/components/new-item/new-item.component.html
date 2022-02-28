@@ -1,14 +1,62 @@
-<H2>Sending a POST Request to create new item with the following information:</H2>
+<h2>Make a Post</h2>
+<form [formGroup]="itemForm">
+    <div class="form-group">
+        <label for="name">Post title</label>
+        <input type=string id="name" aria-describedby="string" class="form-control" placeholder=""
+            formControlName="name">
+    </div>
+    <div class="form-group">
+        <label for="description">Post Description</label>
+        <textarea class="form-control" id="description" aria-describedby="string" srows="3"
+            formControlName="description"></textarea>
+    </div>
 
-<ul class="list-group list-group-flush">
-    <li class="list-group-item"> Name: {{itemObj.name}}</li>
-    <li class="list-group-item"> Description: {{itemObj.description}}</li>
-    <li class="list-group-item"> Condition: {{itemObj.condition}}</li>
-    <li class="list-group-item"> Category: {{itemObj.category}}</li>
-    <li class="list-group-item"> Location: {{itemObj.location}}</li>
+    <div class="form-group">
+        <label for="city">Location</label>
+        <div class="row">
+            <div class="col">
+                <input type=string id="city" aria-describedby="string" class="form-control" placeholder="City"
+                    formControlName="city">
+            </div>
+            <div class="col">
+                <input type=string id="state" aria-describedby="string" class="form-control" placeholder="State"
+                    formControlName="state">
+            </div>
+            <div class="col">
+                <input type=string id="zipCode" aria-describedby="string" class="form-control" placeholder="zipCode"
+                    formControlName="zipCode">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="category">Category</label>
+        <select (change)="setCategory($event)" class="form-control" id="category">
+            <option></option>
+            <option>Furntiure</option>
+            <option>PDF document</option>
+            <option></option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="category">Condition</label>
+        <div>
+            <button class="btn btn-default btn-condition" type="submit" (click)="setCondition('poor')">Poor</button>
+            <button class="btn btn-default btn-condition" type="submit" (click)="setCondition('some-wear')">Some
+                wear</button>
+            <button class="btn btn-default btn-condition" type="submit" (click)="setCondition('good')">Good</button>
+            <button class="btn btn-default btn-condition" type="submit" (click)="setCondition('like-new')">Like
+                New</button>
 
-</ul>
-<button class="btn btn-primary" (click)="postItem()" type="submit">Fire 🔥</button>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="imageFile">Upload Image</label>
+        <input type="file" class="form-control-file" (change)="onFileChanged($event)" id="imageFile">
+    </div>
+    <button class="btn btn-primary center" type="submit" (click)="postItem()">Post</button>
+</form>
+<!-- [disabled]="!itemForm.valid"  -->
+
 
 <ng-template #content let-modal>
     <div class="modal-header">
@@ -19,13 +67,13 @@
         <p>{{response}}</p>
     </div>
 </ng-template>
-<!-- <form [formGroup]="itemForm" (ngSubmit)="postItem()">
-    <div class="form-group"> -->
-<!-- <label for="randomInt">Νumber</label> -->
-<!-- <input type=number id="randomInt" aria-describedby="number" class="form-control" name="randomInt"
-            placeholder="Enter any number" formControlName="randomInt">
-    </div>
-    <button class="btn btn-primary" type="submit">Fire 🔥</button>
-</form> -->
 
-<!-- [disabled]="!itemForm.valid" -->
+
+<!-- <ul class="list-group list-group-flush">
+    <li class="list-group-item"> Name: {{itemObj.name}}</li>
+    <li class="list-group-item"> Description: {{itemObj.description}}</li>
+    <li class="list-gr
+    oup-item"> Condition: {{itemObj.condition}}</li>
+    <li class="list-group-item"> Category: {{itemObj.category}}</li>
+    <li class="list-group-item"> Location: {{itemObj.location}}</li>
+</ul>  -->
