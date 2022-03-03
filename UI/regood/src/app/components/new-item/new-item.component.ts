@@ -15,7 +15,7 @@ export class NewItemComponent implements OnInit {
   response: string;
   category: string;
   condition: string;
-  selectedFile: File
+  selectedFile: File;
 
   @ViewChild("content") content: HTMLElement;
 
@@ -47,19 +47,22 @@ export class NewItemComponent implements OnInit {
     this.selectedFile = event.target.files[0]
   }
   postItem() {
-    const uploadData = new FormData();
-    uploadData.append('image', this.selectedFile, this.selectedFile.name);
     this.initItem();
-    this.itemService.uploadImage(uploadData).subscribe(
-      (data) => this.response = "it worked! ID =\n "+ data.item_id,
-      (error)=> this.response = "Something went wrong! "+error.name
-      );
     this.itemService.postItem(this.itemObj).subscribe(
       (data) => this.response = "it worked! ID =\n "+ data.item_id,
       (error)=> this.response = "Something went wrong! "+error.name
     );
     this.modalService.open(this.content, {ariaLabelledBy: 'modal-basic-title'})
+  
+  if(this.selectedFile) {
+    const uploadData = new FormData();
+    uploadData.append('image', this.selectedFile, this.selectedFile.name);
+    this.itemService.uploadImage(uploadData).subscribe(
+      (data) => this.response = "it worked! ID =\n "+ data.item_id,
+      (error)=> this.response = "Something went wrong! "+error.name
+      );
   }
+}
 
   setCondition(condition){
     this.condition = condition;
@@ -67,6 +70,15 @@ export class NewItemComponent implements OnInit {
   setCategory(e){
     this.category = e.target.value;
 
+  }
+  onFileDropped(event) {
+    this.selectedFile = event[0]
+  }
+  fileBrowseHandler(event) {
+    this.selectedFile = event[0]
+  }
+  deleteFile(){
+    this.selectedFile = null;
   }
 }
 

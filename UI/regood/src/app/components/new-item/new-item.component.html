@@ -49,13 +49,23 @@
 
         </div>
     </div>
-    <div class="form-group">
-        <label for="imageFile">Upload Image</label>
-        <input type="file" class="form-control-file" (change)="onFileChanged($event)" id="imageFile">
-    </div>
-    <button class="btn btn-primary center" type="submit" (click)="postItem()">Post</button>
+
 </form>
+<div class="container" appDnd (fileDropped)="onFileDropped($event)">
+    <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target.files)" />
+    <h3>Drag and drop file here</h3>
+    <h3>or</h3>
+    <label class="button-label " for="fileDropRef">Browse for file</label>
+</div>
+<div *ngIf="selectedFile" class="files-list">
+    <h4 class="name">
+        {{ selectedFile.name }}
+    </h4>
+</div>
+<button class="btn btn-primary center post-button" type="submit" (click)="postItem()">Post</button>
+
 <!-- [disabled]="!itemForm.valid"  -->
+
 
 
 <ng-template #content let-modal>
@@ -67,13 +77,3 @@
         <p>{{response}}</p>
     </div>
 </ng-template>
-
-
-<!-- <ul class="list-group list-group-flush">
-    <li class="list-group-item"> Name: {{itemObj.name}}</li>
-    <li class="list-group-item"> Description: {{itemObj.description}}</li>
-    <li class="list-gr
-    oup-item"> Condition: {{itemObj.condition}}</li>
-    <li class="list-group-item"> Category: {{itemObj.category}}</li>
-    <li class="list-group-item"> Location: {{itemObj.location}}</li>
-</ul>  -->
