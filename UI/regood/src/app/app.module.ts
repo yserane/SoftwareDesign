@@ -8,12 +8,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ItemService } from './services/Item/item.service';
 import {HttpClientModule } from  "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DndDirective } from './directive/appDnD';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewItemComponent
+    NewItemComponent,
+    DndDirective
   ],
   imports: [
     BrowserModule,
