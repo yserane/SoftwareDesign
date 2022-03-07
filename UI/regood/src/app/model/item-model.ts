@@ -2,9 +2,11 @@ export class Item {
     name: string;
     description: string;
     category: string;
-    location: any;
     condition: string;
-
+    city: string;
+    state: string;
+    zipCode:string;
+    id: number;
 Item () {
 }
 }
