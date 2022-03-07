@@ -9,13 +9,15 @@ import { ItemService } from './services/Item/item.service';
 import {HttpClientModule } from  "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DndDirective } from './directive/appDnD';
+import { PostListComponent } from './components/post-list/post-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NewItemComponent,
-    DndDirective
+    DndDirective,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
