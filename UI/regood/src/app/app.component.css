@@ -25,6 +25,14 @@ p {
   flex: 1;
 }
 
+nav ul {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  list-style-type: none;
+  margin-top: 3rem;
+}
+
 .toolbar {
   position: absolute;
   top: 0;
@@ -32,9 +40,13 @@ p {
   right: 0;
   height: 60px;
   display: flex;
+  max-width: 960px;
   align-items: center;
+  margin: 0 auto;
+  justify-content: space-between;
   /* background-color: #1976d2; */
-  color: white;
+  /* color: white; */
+  color: #0278AD;
   font-weight: 600;
 }
 
@@ -53,7 +65,7 @@ p {
 
 .content {
   display: flex;
-  margin: 82px auto 32px;
+  margin: 102px auto 32px;
   padding: 0 16px;
   max-width: 960px;
   flex-direction: column;
@@ -63,7 +75,15 @@ p {
 svg.material-icons {
   height: 60px;
   width: auto;
-  margin: 30px 30px 10px 10px;
+  /* margin: 50px 50px 30px 30px; */
+  margin: 4rem 4rem 2rem 2rem;
+  /* margin: 2rem 2rem; */
+}
+
+svg.user-icon {
+  width: 30px;
+  align-items: baseline;
+  margin: 4rem 4rem 2rem 2rem;
 }
 
 svg.material-icons:not(:last-child) {
