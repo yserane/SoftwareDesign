@@ -40,7 +40,9 @@ export class NewItemComponent implements OnInit {
     this.itemObj.description =this.itemForm.get('description').value;
     this.itemObj.category =  this.category;
     this.itemObj.condition = this.condition
-    this.itemObj.location = {"city":this.itemForm.get('city').value, "state":this.itemForm.get('state').value, "zipCode":this.itemForm.get('zipCode').value}
+    this.itemObj.city = this.itemForm.get('city').value
+    this.itemObj.zipCode=this.itemForm.get('state').value
+    this.itemObj.state =this.itemForm.get('zipCode').value
   }
   
   onFileChanged(event) {
@@ -49,20 +51,22 @@ export class NewItemComponent implements OnInit {
   postItem() {
     this.initItem();
     this.itemService.postItem(this.itemObj).subscribe(
-      (data) => this.response = "it worked! ID =\n "+ data.item_id,
+      (data) => {
+        this.response = "it worked! ID =\n "+ data.item_id;
+        this.itemObj.id = data.item_id;
+        if(this.selectedFile) {
+          const uploadData = new FormData();
+          uploadData.append('image', this.selectedFile, this.selectedFile.name);
+          this.itemService.uploadImage(uploadData, this.itemObj.id).subscribe(
+            (data) => this.response = "it worked! ID =\n "+ data.item_id,
+            (error)=> this.response = "Something went wrong! "+error.name
+            );
+        }
+    },
       (error)=> this.response = "Something went wrong! "+error.name
     );
     this.modalService.open(this.content, {ariaLabelledBy: 'modal-basic-title'})
-  
-  if(this.selectedFile) {
-    const uploadData = new FormData();
-    uploadData.append('image', this.selectedFile, this.selectedFile.name);
-    this.itemService.uploadImage(uploadData).subscribe(
-      (data) => this.response = "it worked! ID =\n "+ data.item_id,
-      (error)=> this.response = "Something went wrong! "+error.name
-      );
   }
-}
 
   setCondition(condition){
     this.condition = condition;
