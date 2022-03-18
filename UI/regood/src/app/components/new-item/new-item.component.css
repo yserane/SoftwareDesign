@@ -4,10 +4,12 @@
   margin: 6px;
 }
 
-.btn-condition:focus {
+.btn-condition:focus, .btn-condition:hover, .btn-condition:active {
   background-color: #007bff;
+  /* background-color: #06A5DF; */
   color: white;
 }
+
 .container {
   width: 450px;
   height: 200px;
@@ -24,6 +26,7 @@
     height: 44px;
     border-radius: 10px;
     background-color:#007bff;
+    /* background-color: #0278AD; */
     padding: 8px 16px;
     cursor: pointer;
     ;
@@ -49,6 +52,11 @@
 .post-button{
   margin-top: 3rem;
 }
+
+.center {
+  text-align: center;
+}
+
 .fileover {
   animation: shake 1s;
   animation-iteration-count: infinite;
@@ -70,4 +78,10 @@
   font-weight: 500;
   color: #353f4a;
   margin: 0;
+}
+
+.icon {
+  width: 4rem;
+  /* float: left; */
+  /* margin-right: .5rem; */
 }
