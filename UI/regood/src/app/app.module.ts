@@ -6,10 +6,14 @@ import { AppComponent } from './app.component';
 import { NewItemComponent } from './components/new-item/new-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ItemService } from './services/Item/item.service';
+import { AuthenticationService } from './services/Authentication/authentication.service';
+
 import {HttpClientModule } from  "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DndDirective } from './directive/appDnD';
 import { PostListComponent } from './components/post-list/post-list.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 
 @NgModule({
@@ -17,7 +21,9 @@ import { PostListComponent } from './components/post-list/post-list.component';
     AppComponent,
     NewItemComponent,
     DndDirective,
-    PostListComponent
+    PostListComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +33,7 @@ import { PostListComponent } from './components/post-list/post-list.component';
     HttpClientModule,
     NgbModule
   ],
-  providers: [ItemService],
+  providers: [ItemService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
