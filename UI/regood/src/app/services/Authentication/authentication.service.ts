@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  endpoint = 'http://vincentprivatenas.mynetgear.com:7070/Authentication/rest/';
+  endpoint = 'http://vincentprivatenas.mynetgear.com:7070/reGood/rest/';
 
   constructor(private httpClient: HttpClient) { }
 

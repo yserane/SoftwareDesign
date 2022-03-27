@@ -46,7 +46,6 @@ export class LoginComponent implements OnInit {
       (data) =>  {alert("it worked! ID =\n "+ data.token);
     this.loading = false; 
     localStorage.setItem('userToken', data.token);
-
   
   },
       (error)=> this.error = error.name

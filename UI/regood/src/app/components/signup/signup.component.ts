@@ -28,6 +28,10 @@ export class SignupComponent implements OnInit {
       firstName: [''],
       lastName: [''],
       phone: [''],
+      city: [''],
+      state:[''],
+      zipCode:['']
+
   });
 
   }
@@ -47,6 +51,9 @@ export class SignupComponent implements OnInit {
     this.signUpModal.email = this.f.email.value;
     this.signUpModal.full_name = this.f.firstName.value + " "+ this.f.lastName.value;
     this.signUpModal.phone_number = this.f.phone.value;
+    this.signUpModal.city = this.f.city.value;
+    this.signUpModal.state = this.f.state.value;
+    this.signUpModal.zip = this.f.zipCode.value;
 
     this.auth.registerUser(this.signUpModal).subscribe(
       (data) => { this.loading = false;
