@@ -48,7 +48,10 @@ export class LoginComponent implements OnInit {
     localStorage.setItem('userToken', data.token);
   
   },
-      (error)=> this.error = error.name
+      (error)=> {
+        this.error = error.name;
+        this.loading = false;
+      }
     )
   }
 }
