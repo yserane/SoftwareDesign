@@ -6,7 +6,7 @@
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" formControlName="username" class="form-control"
-                        [ngClass]="{ 'is-invalid': f.username.errors }" />
+                        [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
                     <div *ngIf="f.username.errors" class="invalid-feedback">
                         <div *ngIf="f.username.errors.required">Username is required</div>
                         <div *ngIf="f.username.errors.pattern">Username length must be between 6-30 characters, no

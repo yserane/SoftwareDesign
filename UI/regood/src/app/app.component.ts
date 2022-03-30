@@ -8,8 +8,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class AppComponent {
   title = 'regood';
-  showTok = false;
-  token :string;
   constructor( private router: Router) {
 
   }
@@ -19,12 +17,6 @@ export class AppComponent {
   }
   navigateToSignUp(){
     this.router.navigate(['/signup']);
-
-  }
-  showToken(){
-    this.showTok = true;
-    this.token = localStorage.getItem("userToken");
-
 
   }
 }
