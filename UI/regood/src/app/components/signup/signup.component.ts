@@ -22,15 +22,15 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     this.signUpForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required],
-      email: ['', Validators.required],
-      firstName: [''],
-      lastName: [''],
-      phone: [''],
-      city: [''],
-      state:[''],
-      zipCode:['']
+      username: ['', [Validators.required, Validators.pattern(RegExp(/^[a-zA-Z]{1}?\w{5,29}$/))]],
+      password: ['', [Validators.required, Validators.pattern(RegExp(/^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z]).{8,}$/))]],
+      email: ['', [Validators.required, Validators.pattern(RegExp(/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/))]],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      phone: ['', [Validators.required, Validators.pattern(RegExp(/\d{10}/))]],
+      city: ['', Validators.required],
+      state:['', Validators.required],
+      zipCode:['', [Validators.required, Validators.pattern(RegExp(/^(\d{5})$/))]]
 
   });
 
