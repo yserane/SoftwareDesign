@@ -59,7 +59,14 @@ export class SignupComponent implements OnInit {
       (data) => { this.loading = false;
         this.router.navigate(['/login']);
       },
-      (error)=> {this.error = error.name;
+      (error)=> {
+        
+        if (error.status == 400) {
+          this.error = "username already exist"
+
+        } else {        
+        this.error = error.name;
+        }
         this.loading = false
       }
     )

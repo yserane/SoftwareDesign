@@ -49,7 +49,11 @@ export class LoginComponent implements OnInit {
   
   },
       (error)=> {
+        if(error.status == 403) {
+          this.error = "Username or Password is incorrect, please try again"
+        } else {
         this.error = error.name;
+        }
         this.loading = false;
       }
     )
