@@ -90,7 +90,7 @@
                                 [ngClass]="{ 'is-invalid': submitted && f.zipCode.errors }">
                             <div *ngIf="f.zipCode.errors" class="invalid-feedback">
                                 <div *ngIf="f.zipCode.errors.required">Zip code is required</div>
-                                <div *ngIf="f.zipCode.errors.pattern">Zip code must be at least 5 digits</div>
+                                <div *ngIf="f.zipCode.errors.pattern">Zip code must be 5 digits</div>
 
                             </div>
                         </div>
