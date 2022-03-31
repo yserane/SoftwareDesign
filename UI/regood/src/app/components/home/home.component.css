@@ -1,10 +1,29 @@
 
 .content {
     display: flex;
-    margin: 102px auto 32px;
+    margin: 72px auto 32px;
     padding: 0 16px;
     max-width: 960px;
     flex-direction: column;
     align-items: center;
   }
-  
+
+svg {
+    width: 6rem;
+  }
+
+.wrapper {
+  display: flex;
+  gap: 2rem;
+}
+
+.wrapper-sub {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+p {
+  font-size: 150%;
+  font-weight: 600;
+}

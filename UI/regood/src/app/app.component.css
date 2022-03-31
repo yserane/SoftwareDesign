@@ -165,14 +165,15 @@ svg#rocket {
   top: -24px;
 }
 
-a,
-a:visited,
-a:hover {
+/* messes up blue button states unless class specified */
+a.btn-light,
+a.btn-light:visited,
+a.btn-light:hover {
   color: #1976d2;
   text-decoration: none;
 }
-
-a:hover {
+ 
+a.btn-light:hover {
   color: #125699;
 }
 
@@ -243,4 +244,8 @@ footer a {
 
 .main-body {
   margin: 20px;
+}
+
+router-outlet {
+  padding-top: 8rem;
 }
