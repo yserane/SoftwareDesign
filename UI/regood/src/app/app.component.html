@@ -1,4 +1,5 @@
 <div class="toolbar" role="banner">
+<a routerLink="/home" routerLinkActive="active">
   <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92.25 27.57">
     <defs>
       <style>
@@ -42,22 +43,11 @@
       </g>
     </g>
   </svg>
+</a>
   <nav>
 
-    <a style="margin: 20px;" class="btn center post-button" routerLink="/signup" routerLinkActive="active">Sign Up</a>
+    <a style="margin: 20px;" class="btn btn-primary post-button" routerLink="/signup" routerLinkActive="active">Sign Up</a>
 
-    <a style="margin: 20px;" class="btn btn-light post-button" routerLink="/login" routerLinkActive="active">Log
-      In</a>
-
-    <!-- Where should this go once user is logged in? -->
-    <!-- <ul>
-      <li>Dashboard</li>
-      <li>My Posts</li>
-      <li>My Requests</li>
-    </ul> -->
-
-    <!-- <div class=" spacer">
-</div> -->
     <svg class="user-icon" id="user-icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
       <defs>
         <style>
@@ -74,9 +64,22 @@
         </g>
       </g>
     </svg>
+    <a style="margin: 20px;" class="btn btn-light post-button" routerLink="/login" routerLinkActive="active">Log
+      In</a>
+
+    <!-- Where should this go once user is logged in? -->
+    <!-- <ul>
+      <li>Dashboard</li>
+      <li>My Posts</li>
+      <li>My Requests</li>
+    </ul> -->
+
+    <!-- <div class=" spacer">
+</div> -->
+    
   </nav>
 
 </div>
-
+<br>
 <router-outlet class="main-body">
 </router-outlet>
