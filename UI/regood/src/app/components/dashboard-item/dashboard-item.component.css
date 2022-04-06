@@ -1,0 +1,39 @@
+.header {
+
+    color:grey;
+}
+
+.card-img-top {
+    width: 5rem;
+    height: 5rem;
+    margin: 2rem;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #f1f1f1;
+    border-top: 1px solid darkgrey;
+
+}
+.card-holder{
+    width: 80%;
+    margin: 2rem;
+    
+}
+
+span {
+    padding: 0 1rem;
+  
+}
+
+
+.header-button, .date{
+    padding: 0 1rem;
+    float:right;
+}
+
+.header-button {
+    margin-bottom: 1rem;
+}
