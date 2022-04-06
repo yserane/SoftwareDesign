@@ -16,11 +16,15 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardItemComponent } from './components/dashboard-item/dashboard-item.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {path: 'signup', component: SignupComponent},
+  {path: 'dashboard', component: DashboardComponent},
   {path: '', component: HomeComponent},
+  
 
   // otherwise redirect to home
   { path: '**', redirectTo: ''}
@@ -33,7 +37,9 @@ const routes: Routes = [
     PostListComponent,
     LoginComponent,
     SignupComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardComponent,
+    DashboardItemComponent
   ],
   imports: [
     BrowserModule,

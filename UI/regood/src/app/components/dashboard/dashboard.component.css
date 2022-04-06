@@ -1,0 +1,5 @@
+
+.items-container {
+    display: grid;
+    grid-template-columns: fit-content(40%);
+}

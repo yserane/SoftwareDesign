@@ -25,5 +25,9 @@ export class ItemService {
   getItemById():Observable<any>{
     return this.httpClient.get(this.endpoint+'/item/1');
   }
+
+  getAllItems():Observable<any>{
+    return this.httpClient.get(this.endpoint+'/item')
+  }
   
 }

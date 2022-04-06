@@ -47,7 +47,6 @@ nav button {
 }
 
 .toolbar {
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -248,4 +247,19 @@ footer a {
 
 router-outlet {
   padding-top: 8rem;
+}
+
+.secondary-nav nav{
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #0278AD;
+  color: white;
+}
+.secondary-nav a{
+  color: white;
+  padding: 2rem;
+  font-size: 1.4rem;
+}
+.active-link {
+  background-color: #06a5df;  
 }

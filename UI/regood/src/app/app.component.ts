@@ -11,12 +11,4 @@ export class AppComponent {
   constructor( private router: Router) {
 
   }
-
-  navigateToLogin(){
-    this.router.navigate(['/login']);
-  }
-  navigateToSignUp(){
-    this.router.navigate(['/signup']);
-
-  }
 }
