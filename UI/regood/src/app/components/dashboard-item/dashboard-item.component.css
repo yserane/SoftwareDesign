@@ -3,6 +3,18 @@
     color:grey;
 }
 
+.type {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 120%;
+    /* font color should change for requests */
+    color: #0278AD;
+}
+
+h5 {
+    color: #0278AD;
+}
+
 .card-img-top {
     width: 5rem;
     height: 5rem;
@@ -35,5 +47,7 @@ span {
 }
 
 .header-button {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
+    padding-top: .1rem;
+    padding-bottom: .1rem;
 }
