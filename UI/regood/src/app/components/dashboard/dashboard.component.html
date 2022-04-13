@@ -1,7 +1,7 @@
 <div class="row">
     <ng-container *ngFor="let item of items">
         <div class="col-6">
-            <app-dashboard-item [item]="item">
+            <app-dashboard-item (click)="openDialog(item)" [item]="item">
 
             </app-dashboard-item>
         </div>

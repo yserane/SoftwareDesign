@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthenticationService } from './services/Authentication/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class AppComponent {
   title = 'regood';
-  constructor( private router: Router) {
-
+  isUserAuth : Promise<boolean>;
+  constructor( private router: Router, private authService: AuthenticationService) {
+    this.isUserAuth = this.authService.isUserAuthenticated();
   }
 }

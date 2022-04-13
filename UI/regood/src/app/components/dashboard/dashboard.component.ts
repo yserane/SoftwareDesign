@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from 'src/app/services/Item/item.service';
+import {MatDialog} from '@angular/material/dialog';
+import { PostItemModalComponent } from '../post-item-modal/post-item-modal.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,32 +10,22 @@ import { ItemService } from 'src/app/services/Item/item.service';
 })
 export class DashboardComponent implements OnInit {
   items: any[] = [];
-  constructor(private itemService: ItemService) { }
+  constructor(private itemService: ItemService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
 
     this.itemService.getAllItems().subscribe(
       (data) => this.items = data
     )
+  }
 
-  //   let obj =    {
-  //     item_id: 7,
-  //     name: "Item-name",
-  //     description: "description here ",
-  //     category: "Cloth",
-  //     condition: "Good",
-  //     city: "Oswego",
-  //     state: "New York",
-  //     zipCode: "13126"
-  // };
-    // this.items.push(obj);
-    // this.items.push(obj);
-    // this.items.push(obj);
-    // this.items.push(obj);
-    // this.items.push(obj);
-    // this.items.push(obj);
-    // this.items.push(obj);
+  openDialog(item) {
+    const dialogRef = this.dialog.open(PostItemModalComponent);
+    
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 }

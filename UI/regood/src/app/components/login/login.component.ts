@@ -43,9 +43,11 @@ export class LoginComponent implements OnInit {
     this.loginModal.password = this.f.password.value;
 
     this.auth.login(this.loginModal).subscribe(
-      (data) =>  {alert("it worked! ID =\n "+ data.token);
+      (data) =>  {
     this.loading = false; 
+
     localStorage.setItem('userToken', data.token);
+    this.router.navigateByUrl("/dashboard")
   
   },
       (error)=> {

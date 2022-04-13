@@ -18,11 +18,14 @@ import { SignupComponent } from './components/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DashboardItemComponent } from './components/dashboard-item/dashboard-item.component';
+import { AuthGuardGuard } from './auth-guard.guard';
+import {MatDialogModule} from '@angular/material/dialog';
+import { PostItemModalComponent } from './components/post-item-modal/post-item-modal.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {path: 'signup', component: SignupComponent},
-  {path: 'dashboard', component: DashboardComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuardGuard]},
   {path: '', component: HomeComponent},
   
 
@@ -39,7 +42,8 @@ const routes: Routes = [
     SignupComponent,
     HomeComponent,
     DashboardComponent,
-    DashboardItemComponent
+    DashboardItemComponent,
+    PostItemModalComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
+    MatDialogModule,
     RouterModule.forRoot(routes)
   ],
   providers: [ItemService, AuthenticationService],
