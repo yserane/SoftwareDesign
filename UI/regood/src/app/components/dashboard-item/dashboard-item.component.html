@@ -8,8 +8,8 @@
     <div class="card" (click)="openDialog($event)">
         <img class="card-img-top" src="../../../assets/regood_logo.png" alt="Card image cap">
         <div class="card-body">
-            <h6>{{item.city? item.city: 'City'}}, {{item.state? item.state: 'State'}}</h6>
-            <h5 class="card-title">{{item.name? item.name: 'Item Name'}}</h5>
+            <p class="location">{{item.city? item.city: 'City'}}, {{item.state? item.state: 'State'}}</p>
+            <p class="card-title">{{item.name? item.name: 'Item Name'}}</p>
             <p class="card-text">{{item.description? item.description: 'item description here'}}</p>
         </div>
     </div>
