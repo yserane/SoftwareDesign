@@ -1,3 +1,8 @@
+.over-all {
+  margin: auto;
+  max-width: 34rem;
+}
+
 .btn-condition {
   border: 1px #00000045 solid;
   border-radius: 0px;

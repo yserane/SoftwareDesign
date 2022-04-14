@@ -21,10 +21,15 @@ import { DashboardItemComponent } from './components/dashboard-item/dashboard-it
 import { AuthGuardGuard } from './auth-guard.guard';
 import {MatDialogModule} from '@angular/material/dialog';
 import { PostItemModalComponent } from './components/post-item-modal/post-item-modal.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatIconModule} from '@angular/material/icon';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {path: 'signup', component: SignupComponent},
+  {path: 'post-item', component: NewItemComponent},
+
   {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuardGuard]},
   {path: '', component: HomeComponent},
   
@@ -53,7 +58,10 @@ const routes: Routes = [
     HttpClientModule,
     NgbModule,
     MatDialogModule,
-    RouterModule.forRoot(routes)
+    MatPaginatorModule,
+    RouterModule.forRoot(routes),
+    NoopAnimationsModule,
+    MatIconModule
   ],
   providers: [ItemService, AuthenticationService],
   bootstrap: [AppComponent]

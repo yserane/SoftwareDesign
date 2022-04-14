@@ -67,12 +67,18 @@
     </svg>
     <a style="margin: 20px;" class="btn btn-light post-button" routerLink="/login" routerLinkActive="active">Log
       In</a>
+
+    <a style="margin: 20px;" class="btn btn-primary post-button" routerLink="/post-item" routerLinkActive="active">Make
+      a
+      Post</a>
+
   </nav>
 
 </div>
 
 <!-- don't want visible until user logs in -->
-<div class="secondary-nav" *ngIf="isUserAuth | async">
+<!-- *ngIf="isUserAuth | async" -->
+<div class="secondary-nav">
   <nav>
     <a routerLink="/dashboard" routerLinkActive="active-link">Dashboard</a>
     <a>My Posts</a>

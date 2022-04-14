@@ -27,6 +27,7 @@ h5 {
     width: 100%;
     background-color: #f1f1f1;
     border-top: 1px solid darkgrey;
+    cursor: pointer;
 
 }
 .card-holder{

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from 'src/app/services/Item/item.service';
-import {MatDialog} from '@angular/material/dialog';
-import { PostItemModalComponent } from '../post-item-modal/post-item-modal.component';
+import { Router } from '@angular/router';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,22 +10,32 @@ import { PostItemModalComponent } from '../post-item-modal/post-item-modal.compo
 })
 export class DashboardComponent implements OnInit {
   items: any[] = [];
-  constructor(private itemService: ItemService, public dialog: MatDialog) { }
+  pageIndex =1;
+  constructor(private itemService: ItemService, private router: Router) { }
 
   ngOnInit(): void {
 
-    this.itemService.getAllItems().subscribe(
-      (data) => this.items = data
+    this.itemService.getAllItems(this.pageIndex, 9).subscribe(
+      (data) => this.items = data,
+      (error) => {
+        if (error.status == 401) {
+          alert("Session had Expired, please log in");
+          this.router.navigateByUrl("/login");
+        }
+      }
     )
   }
-
-  openDialog(item) {
-    const dialogRef = this.dialog.open(PostItemModalComponent);
-    
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
-
+  onChangePage(pe:PageEvent) {
+    console.log(pe.pageIndex);
+    console.log(pe.pageSize);
+    this.itemService.getAllItems(pe.pageIndex+1, pe.pageSize-1).subscribe(
+      (data) => this.items = data,
+      (error) => {
+        if (error.status == 401) {
+          alert("Session had Expired, please log in");
+          this.router.navigateByUrl("/login");
+        }
+      }
+    )
+  } 
 }

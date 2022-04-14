@@ -1,0 +1,66 @@
+.header {
+
+    color:grey;
+}
+
+.type {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 120%;
+    /* font color should change for requests */
+    color: #0278AD;
+}
+
+h5 {
+    color: #0278AD;
+}
+
+.card-img-top {
+    width: 5rem;
+    height: 5rem;
+    margin: 2rem;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+.card-holder{
+    margin: 2rem;
+}
+
+.mat-dialog-title {
+    border-bottom: 1px solid;
+}
+span {
+    padding: 0 1rem;
+  
+}
+
+.header-button, .date{
+    padding: 0 1rem;
+    float:right;
+}
+
+.header-button {
+    margin-bottom: .5rem;
+    padding-top: .1rem;
+    padding-bottom: .1rem;
+}
+
+.button-bottom {
+    margin: 2rem;
+}
+.dialog-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .button-close {
+    border: none;
+    background: white;
+    color: red;
+  }

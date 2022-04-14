@@ -1,11 +1,14 @@
 <div class="row">
     <ng-container *ngFor="let item of items">
         <div class="col-6">
-            <app-dashboard-item (click)="openDialog(item)" [item]="item">
+            <app-dashboard-item [item]="item">
 
             </app-dashboard-item>
         </div>
-
-
     </ng-container>
+
 </div>
+
+<mat-paginator *ngIf="items.length > 0" (page)="onChangePage($event)" [length]="100" [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 50]" aria-label="Select page">
+</mat-paginator>
