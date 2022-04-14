@@ -59,7 +59,7 @@ const routes: Routes = [
     NgbModule,
     MatDialogModule,
     MatPaginatorModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
     NoopAnimationsModule,
     MatIconModule
   ],

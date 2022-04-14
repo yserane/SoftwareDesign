@@ -23,7 +23,14 @@ svg {
   justify-content: center;
 }
 
+h1 {
+  font-size: 200%;
+  font-weight: 500;
+  margin-bottom: .5rem;
+}
+
 p {
   font-size: 150%;
   font-weight: 600;
+  line-height: 2em;
 }

@@ -5,11 +5,17 @@
 }
 
 .col-6 {
-    max-width: 45%;
+    max-width: 100%;
 }
 
 .row {
     justify-content: center;
     margin-right: 0;
     margin-left: 0;
+}
+
+@media screen and (min-width: 60rem){
+    .col-6 {
+        max-width: 45%;
+    }
 }

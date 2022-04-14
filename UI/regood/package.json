@@ -13,7 +13,7 @@
   "dependencies": {
     "@angular/animations": "~13.3.3",
     "@angular/cdk": "^13.3.2",
-    "@angular/cli": "~13.3.2",
+    "@angular/cli": "~13.3.3",
     "@angular/common": "~13.3.3",
     "@angular/compiler": "~13.3.3",
     "@angular/core": "~13.3.3",
@@ -28,18 +28,18 @@
     "bootstrap": "^4.5.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^13.2.5",
+    "@angular-devkit/build-angular": "^13.3.3",
     "@angular/compiler-cli": "~13.3.3",
-    "@types/jasmine": "~3.5.0",
+    "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
-    "karma": "^6.3.17",
+    "karma": "^6.3.18",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
