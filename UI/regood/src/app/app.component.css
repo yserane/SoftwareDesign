@@ -47,19 +47,36 @@ nav button {
 }
 
 .toolbar {
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
   display: flex;
+  flex-direction: column;
   max-width: 960px;
   align-items: center;
   margin: 0 auto;
-  justify-content: space-between;
   /* background-color: #1976d2; */
   /* color: white; */
   color: #0278AD;
   font-weight: 600;
+}
+
+.toolbar a {
+  margin-bottom: -40px;
+  margin-top: -40px;
+}
+
+.toolbar nav {
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+
+@media screen and (min-width: 47rem){
+  .toolbar {
+    flex-direction: row;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    justify-content: space-between;
+  }
 }
 
 .toolbar img {
