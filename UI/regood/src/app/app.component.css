@@ -288,3 +288,12 @@ router-outlet {
   background-color: #06a5df;  
   text-decoration: none;
 }
+
+/* adjust bootstrap button colors */
+
+/* .btn-primary, .btn-primary:visited {
+  background-color: #06a5df !important;
+}
+.btn-primary:hover, .btn-primary:active {
+  background-color: #0278AD !important;
+} */

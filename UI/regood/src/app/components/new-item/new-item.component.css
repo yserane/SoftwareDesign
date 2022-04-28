@@ -86,7 +86,31 @@
 }
 
 .icon {
-  width: 4rem;
+  width: 6rem;
   /* float: left; */
   /* margin-right: .5rem; */
+}
+
+.wrapper {
+display: flex;
+gap: 2rem;
+margin-bottom: 1.5rem;
+}
+
+.wrapper-sub {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 200%;
+  font-weight: 500;
+  margin-bottom: .5rem;
+}
+
+p {
+  font-size: 150%;
+  font-weight: 600;
+  line-height: 2em;
 }
