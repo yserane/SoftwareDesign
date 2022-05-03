@@ -11,9 +11,14 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 export class DashboardComponent implements OnInit {
   items: any[] = [];
   pageIndex =1;
+  length = 0;
   constructor(private itemService: ItemService, private router: Router) { }
 
   ngOnInit(): void {
+    this.itemService.getItemsSize().subscribe(
+      (data) => this.length = data["posted_item_size"] ,
+      (err) => console.log(err)
+    )
 
     this.itemService.getAllItems(this.pageIndex, 9).subscribe(
       (data) => this.items = data,

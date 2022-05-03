@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Item } from 'src/app/model/item-model';
 import { ItemService } from '../../services/Item/item.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { AuthenticationService } from 'src/app/services/Authentication/authentication.service';
 
 @Component({
   selector: 'app-new-item',
@@ -19,12 +20,15 @@ export class NewItemComponent implements OnInit {
 
   @ViewChild("content") content: HTMLElement;
 
-  constructor(private itemService: ItemService, private modalService: NgbModal) { }
+  constructor(private itemService: ItemService, private modalService: NgbModal) {
+
+   }
 
   ngOnInit(): void {
     this.initFormGroup();
     
   }
+
   initFormGroup(){
     this.itemForm = new FormGroup({
       name: new FormControl(null, [Validators.required]),
@@ -41,8 +45,8 @@ export class NewItemComponent implements OnInit {
     this.itemObj.category =  this.category;
     this.itemObj.condition = this.condition
     this.itemObj.city = this.itemForm.get('city').value
-    this.itemObj.zipCode=this.itemForm.get('state').value
-    this.itemObj.state =this.itemForm.get('zipCode').value
+    this.itemObj.zipCode=this.itemForm.get('zipCode').value
+    this.itemObj.state =this.itemForm.get('state').value
   }
   
   onFileChanged(event) {
@@ -52,13 +56,13 @@ export class NewItemComponent implements OnInit {
     this.initItem();
     this.itemService.postItem(this.itemObj).subscribe(
       (data) => {
-        this.response = "it worked! ID =\n "+ data.item_id;
+        this.response = "it worked!\n ";
         this.itemObj.id = data.item_id;
         if(this.selectedFile) {
           const uploadData = new FormData();
           uploadData.append('image', this.selectedFile, this.selectedFile.name);
           this.itemService.uploadImage(uploadData, this.itemObj.id).subscribe(
-            (data) => this.response = "it worked! ID =\n "+ data.item_id,
+            (data) => this.response = "it worked!",
             (error)=> this.response = "Something went wrong! "+error.name
             );
         }

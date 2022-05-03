@@ -17,19 +17,20 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { DashboardItemComponent } from './components/dashboard-item/dashboard-item.component';
+import { DashboardItemComponent } from './components/sub-components/dashboard-item/dashboard-item.component';
 import { AuthGuardGuard } from './auth-guard.guard';
 import {MatDialogModule} from '@angular/material/dialog';
-import { PostItemModalComponent } from './components/post-item-modal/post-item-modal.component';
+import { PostItemModalComponent } from './components/sub-components/post-item-modal/post-item-modal.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatIconModule} from '@angular/material/icon';
+import { RequestModalComponent } from './components/sub-components/request-modal/request-modal.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {path: 'signup', component: SignupComponent},
-  {path: 'post-item', component: NewItemComponent},
-
+  {path: 'post-item', component: NewItemComponent,  canActivate:[AuthGuardGuard]},
+  { path: 'post-list', component: PostListComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuardGuard]},
   {path: '', component: HomeComponent},
   
@@ -48,7 +49,8 @@ const routes: Routes = [
     HomeComponent,
     DashboardComponent,
     DashboardItemComponent,
-    PostItemModalComponent
+    PostItemModalComponent,
+    RequestModalComponent
   ],
   imports: [
     BrowserModule,

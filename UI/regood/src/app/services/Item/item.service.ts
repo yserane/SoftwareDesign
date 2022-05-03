@@ -30,5 +30,10 @@ export class ItemService {
   getAllItems(index, range):Observable<any>{
     return this.httpClient.get(this.endpoint+'/item?row_index='+index+'&range='+range,  {headers: this.headers})
   }
+
+  getItemsSize():Observable<any>{
+    return this.httpClient.get(this.endpoint+'/rest/item_size',  {headers: this.headers})
+
+  }
   
 }

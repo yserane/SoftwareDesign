@@ -1,0 +1,16 @@
+<div mat-dialog-title class="header dialog-title">
+    <span class="type">Request Item: {{title}}</span>
+    <button class="button-close" mat-icon-button mat-dialog-close>
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+<mat-dialog-content class="mat-typography">
+    <textarea maxlength="998" class="form-control" id="msg" [ngModel]="msg" aria-describedby="string"
+        placeholder="Add message to the donor..." (ngModelChange)="msgChanged($event)">
+    </textarea>
+    <span class="remaning">{{remainingText}}/998 Characters Allowed</span>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+    <button class="btn btn-primary button-bottom">Request</button>
+</mat-dialog-actions>

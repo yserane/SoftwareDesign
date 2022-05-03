@@ -77,11 +77,10 @@
 </div>
 
 <!-- don't want visible until user logs in -->
-<!-- *ngIf="isUserAuth | async" -->
 <div class="secondary-nav">
-  <nav>
+  <nav *ngIf="isUserAuth | async">
     <a routerLink="/dashboard" routerLinkActive="active-link">Dashboard</a>
-    <a>My Posts</a>
+    <a routerLink="/post-list" routerLinkActive="active-link">My Posts</a>
     <a>My Requests</a>
 
   </nav>

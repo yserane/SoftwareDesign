@@ -5,7 +5,7 @@ export class Item {
     condition: string;
     city: string;
     state: string;
-    zipCode:string;
+    zipCode:number;
     id: number;
 Item () {
 }
