@@ -9,7 +9,7 @@
   margin: 6px;
 }
 
-.btn-condition:focus, .btn-condition:hover, .btn-condition:active {
+.btn-condition:focus, .btn-condition:hover, .btn-condition:active, .btn-condition:visited {
   background-color: #007bff;
   /* background-color: #06A5DF; */
   color: white;
