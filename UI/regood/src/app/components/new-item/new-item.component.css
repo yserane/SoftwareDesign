@@ -9,10 +9,10 @@
   margin: 6px;
 }
 
-.btn-condition:focus, .btn-condition:hover, .btn-condition:active, .btn-condition:visited {
+.button-clicked {
   background-color: #007bff;
-  /* background-color: #06A5DF; */
   color: white;
+
 }
 
 .container {

@@ -64,11 +64,15 @@
         <div class="form-group">
             <label for="category">Condition</label>
             <div>
-                <button class="btn btn-default btn-condition" type="submit" (click)="setCondition('poor')">Poor</button>
-                <button class="btn btn-default btn-condition" type="submit" (click)="setCondition('some-wear')">Some
+                <button class="btn btn-default btn-condition" [ngClass]="{ 'button-clicked': condition == 'poor'}"
+                    type="submit" (click)="setCondition('poor')">Poor</button>
+                <button class="btn btn-default btn-condition" type="submit" (click)="setCondition('some-wear')"
+                    [ngClass]="{ 'button-clicked': condition == 'some-wear'}">Some
                     wear</button>
-                <button class="btn btn-default btn-condition" type="submit" (click)="setCondition('good')">Good</button>
-                <button class="btn btn-default btn-condition" type="submit" (click)="setCondition('like-new')">Like
+                <button class="btn btn-default btn-condition" type="submit" (click)="setCondition('good')"
+                    [ngClass]="{ 'button-clicked': condition == 'good'}">Good</button>
+                <button class="btn btn-default btn-condition" type="submit" (click)="setCondition('like-new')"
+                    [ngClass]="{ 'button-clicked': condition == 'like-new'}">Like
                     New</button>
 
             </div>
