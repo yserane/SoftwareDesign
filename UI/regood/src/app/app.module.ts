@@ -25,12 +25,15 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatIconModule} from '@angular/material/icon';
 import { RequestModalComponent } from './components/sub-components/request-modal/request-modal.component';
+import { RequestListComponent } from './components/request-list/request-list.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {path: 'signup', component: SignupComponent},
   {path: 'post-item', component: NewItemComponent,  canActivate:[AuthGuardGuard]},
   { path: 'post-list', component: PostListComponent},
+  { path: 'request-list', component: RequestListComponent},
+
   {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuardGuard]},
   {path: '', component: HomeComponent},
   
@@ -50,7 +53,8 @@ const routes: Routes = [
     DashboardComponent,
     DashboardItemComponent,
     PostItemModalComponent,
-    RequestModalComponent
+    RequestModalComponent,
+    RequestListComponent
   ],
   imports: [
     BrowserModule,

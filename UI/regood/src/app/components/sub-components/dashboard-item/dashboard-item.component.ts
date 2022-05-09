@@ -18,7 +18,7 @@ export class DashboardItemComponent implements OnInit {
 
   openDialog(event) {
     const dialogRef = this.dialog.open(PostItemModalComponent, {
-      height: '600px',
+      height: '480px',
       width: '600px',
       data: {
         item: this.item,
