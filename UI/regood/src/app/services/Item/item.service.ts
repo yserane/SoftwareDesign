@@ -28,6 +28,12 @@ export class ItemService {
     return this.httpClient.get(this.endpoint+'/item/1',  {headers: headers});
   }
 
+  getItemImage(id: string):Observable<any> {
+    let headers = {'access_token': localStorage.getItem("userToken")};
+    return this.httpClient.get(this.endpoint+'/item_url?item_id='+id,{headers: headers});
+
+  }
+
   getAllItems(index, range):Observable<any>{
     let headers = {'access_token': localStorage.getItem("userToken")};
     return this.httpClient.get(this.endpoint+'/item?row_index='+index+'&range='+range,  {headers: headers})

@@ -36,6 +36,7 @@ const routes: Routes = [
 
   {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuardGuard]},
   {path: '', component: HomeComponent},
+
   
 
   // otherwise redirect to home

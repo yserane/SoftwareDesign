@@ -45,9 +45,8 @@ export class LoginComponent implements OnInit {
     this.auth.login(this.loginModal).subscribe(
       (data) =>  {
     this.loading = false; 
-
     localStorage.setItem('userToken', data.token);
-    this.router.navigateByUrl("/dashboard")
+    this.router.navigateByUrl("/dashboard");
   
   },
       (error)=> {

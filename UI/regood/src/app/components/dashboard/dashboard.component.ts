@@ -33,7 +33,13 @@ export class DashboardComponent implements OnInit {
   onChangePage(pe:PageEvent) {
     console.log(pe.pageIndex);
     console.log(pe.pageSize);
-    this.itemService.getAllItems(pe.pageIndex+1, pe.pageSize-1).subscribe(
+    if (pe.pageIndex == 0) {
+      this.pageIndex = pe.pageSize
+    } else {
+      this.pageIndex += pe.pageSize
+    }
+
+    this.itemService.getAllItems(this.pageIndex, pe.pageSize-1).subscribe(
       (data) => this.items = data,
       (error) => {
         if (error.status == 401) {
